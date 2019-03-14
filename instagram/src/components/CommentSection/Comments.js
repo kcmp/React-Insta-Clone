@@ -8,7 +8,7 @@ class Comment extends Component {
   render() {
     return (
       <p>
-        <span>{this.props.username}</span>
+        <span className="username">{this.props.username}: </span>
         {this.props.text}
       </p>
     );

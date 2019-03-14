@@ -9,7 +9,7 @@ const Users = props => {
         alt="user thumbnail"
         className="user-thumbnail"
       />
-      <p className="username">{props.username}</p>
+      <p className="username">{props.username}:</p>
     </div>
   );
 };
