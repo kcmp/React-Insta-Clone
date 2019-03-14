@@ -24,3 +24,13 @@
     font-weight: bold;
   }
   
+  .comment-icons {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 10px;
+  }
+
+  .comment-icons img {
+      justify-content: space-between;
+  }

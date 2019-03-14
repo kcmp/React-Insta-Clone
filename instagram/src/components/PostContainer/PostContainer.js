@@ -4,6 +4,7 @@ import "./PostContainer.css";
 import CommentSection from "../CommentSection/CommentSection.js";
 import Users from "../PostContainer/Users.js";
 import heart_icon from '../SearchBar/imgs/heart-regular.svg'
+import comment_icon from "../SearchBar/imgs/comment-regular.svg"
 
 const PostContainer = props => {
   console.log(props);
@@ -20,7 +21,10 @@ const PostContainer = props => {
 
       <div className="bottom-container">
         <div className="icon-container" />
-        <img src={heart_icon} alt="" className="icon heart-icon" />
+            <div className="comment-icons">
+                <img src={heart_icon} alt="" className="icon heart-icon" />
+                <img src={comment_icon} alt="" className="icon comment-icon" />
+            </div>
         <p className="likes">{props.post.likes} likes</p>
         <CommentSection comments={props.post.comments} />
       </div>
