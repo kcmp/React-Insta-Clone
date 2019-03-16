@@ -22,11 +22,15 @@ const PostContainer = props => {
       </div>
 
       <div className="bottom-container">
-        <div className="icon-container">
+        <div className="icon-container"
+        key="likes-icons-container"
+        onClick={props.incrementLike}
+        >
+        
           <IconContext.Provider
             value={{ size: "1.5rem", className: "fa-icon" }}
           >
-            <FaRegHeart />
+            <FaRegHeart  />
             <FaRegComment />
           </IconContext.Provider>
         </div>

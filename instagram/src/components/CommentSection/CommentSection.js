@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+// import dummyData from "./dummy-data.js";
 
 import Comment from "../CommentSection/Comments.js";
 import AddComment from "../CommentSection/AddComment";
@@ -10,7 +11,8 @@ class CommentSection extends Component {
     super(props);
     this.state = {
       comments: this.props.comments,
-      commentText: ""
+      commentText: "",
+      likes: this.props.likes
     };
   }
 
@@ -20,6 +22,11 @@ class CommentSection extends Component {
     const comment = this.state.commentText;
     this.props.updateComments(this.props.index, comment);
     this.setState({ commentText: "" });
+  };
+
+  incrementLike = () => {
+    let likes = this.state.likes + 1;
+    this.setState({ likes });
   };
 
   //handles state for AddComment in this component

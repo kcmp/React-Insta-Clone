@@ -9,7 +9,9 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      dummyData: []
+      dummyData: [],
+      likes:0,
+      show:true
     };
   }
 
@@ -27,6 +29,10 @@ class App extends Component {
       return { dummyData: posts };
     });
   };
+
+  IncrementLikes = () => {
+    this.setState({ likes: this.state.clicks + 1 });
+  }
 
   render() {
     return (
