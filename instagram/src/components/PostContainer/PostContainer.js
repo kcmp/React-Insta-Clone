@@ -1,10 +1,12 @@
 import React from "react";
 import "./PostContainer.css";
 
-import CommentSection from "../CommentSection/CommentSection.js";
-import Users from "../PostContainer/Users.js";
-import heart_icon from '../SearchBar/imgs/heart-regular.svg'
-import comment_icon from "../SearchBar/imgs/comment-regular.svg"
+import CommentSection from "../CommentSection/CommentSection";
+import Users from "../PostContainer/Users";
+
+
+import { FaRegComment, FaRegHeart } from "react-icons/fa";
+import { IconContext } from "react-icons";
 
 const PostContainer = props => {
   console.log(props);
@@ -20,13 +22,21 @@ const PostContainer = props => {
       </div>
 
       <div className="bottom-container">
-        <div className="icon-container" />
-            <div className="comment-icons">
-                <img src={heart_icon} alt="" className="icon heart-icon" />
-                <img src={comment_icon} alt="" className="icon comment-icon" />
-            </div>
+        <div className="icon-container">
+          <IconContext.Provider
+            value={{ size: "1.5rem", className: "fa-icon" }}
+          >
+            <FaRegHeart />
+            <FaRegComment />
+          </IconContext.Provider>
+        </div>
         <p className="likes">{props.post.likes} likes</p>
-        <CommentSection comments={props.post.comments} />
+        <CommentSection
+          comments={props.post.comments}
+          timestamp={props.post.timestamp}
+          index={props.index}
+          updateComments={props.updateComments}
+        />
       </div>
     </div>
   );

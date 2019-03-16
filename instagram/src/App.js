@@ -19,13 +19,22 @@ class App extends Component {
     }, 1000);
   }
 
+  //update app's state with new comment
+  updateComments = (index, text) => {
+    this.setState((prevState, prevProps) => {
+      const posts = prevState.dummyData.slice();
+      posts[index].comments.push({ username: "", text: text });
+      return { dummyData: posts };
+    });
+  };
+
   render() {
     return (
       <div className="App">
         <SearchBar />
         <div>
           {this.state.dummyData.length === 0 ? (
-            <p>LOADING</p>
+            <h2>LOADING</h2>
           ) : (
             this.state.dummyData.map((post, i) => {
               return (
@@ -33,7 +42,7 @@ class App extends Component {
                   key={i}
                   post={post}
                   index={i}
-                  // updateComments={this.updateComments}
+                  updateComments={this.updateComments}
                 />
               );
             })

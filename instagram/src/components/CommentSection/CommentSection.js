@@ -45,7 +45,7 @@ class CommentSection extends Component {
         <p className="time-stamp">{this.props.timestamp}</p>
         <hr className="comment-divider" />
         <AddComment
-          // addNewCommment={this.addNewCommment}
+          addNewCommment={this.addNewCommment}
           changeHandler={this.changeHandler}
           commentText={this.state.commentText}
         />
