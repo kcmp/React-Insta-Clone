@@ -1,6 +1,6 @@
 import React from 'react';
-import myStorage from '../Storage'
-import Login from '../Components/Login/Login'
+import myStorage from '../../Storage';
+import Login from "../Authentication/Login";
 
 const Authenticate = App => class extends React.Component{
     constructor(props){

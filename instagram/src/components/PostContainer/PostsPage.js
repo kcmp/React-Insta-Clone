@@ -43,7 +43,7 @@ class PostsPage extends Component {
   }
 
   //update app's state with new comment
-  updateComments = (index,text) =>{
+  updateComments = (index, text) =>{
     this.setState((prevState,props)=>{
       const posts = prevState.dummyData.slice();
       posts[index].comments.push({username:this.state.user,text:text});
@@ -52,8 +52,8 @@ class PostsPage extends Component {
     })
   }
 
-  updateLikes = (index,liked)=>{
-    this.setState((prevState,props)=>{
+  updateLikes = (index, liked)=>{
+    this.setState((prevState, props)=>{
       const posts = prevState.dummyData.slice();
       liked? posts[index].likes+=1:posts[index].likes-=1;
       return{dummyData: posts}

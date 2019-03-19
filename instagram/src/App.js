@@ -2,29 +2,34 @@ import React, { Component } from 'react';
 
 import './App.css';
 
+import Authenticate from './components/Authentication/Authenticate';
 import PostsPage from './components/PostContainer/PostsPage';
+
+//posts page passed into the higher order component
+/* which pattern is better?
+composing the higher order component here or inside of posts page? */
+const AuthenticatedPostPage = Authenticate(PostsPage);
 
 class App extends Component {
   constructor(){
     super();
     this.state ={
+      user: {}
     }
   }
 
-  // when the component mounts  
-  //I want to get the dummy data from the local storage
+  /*should the users information be on App or should it be on postsPage? */
   componentDidMount(){
+    
   }
 
-  //only update local storage if the data has changed
-  componentDidUpdate(){ 
-  }
-
+  
 
   render() {
+    localStorage.clear()
     return (
       <div className="App">
-       <PostsPage />
+       <AuthenticatedPostPage  />
       </div>
     );
   }
