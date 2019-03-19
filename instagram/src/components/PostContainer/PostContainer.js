@@ -3,6 +3,7 @@ import "./PostContainer.css";
 
 import CommentSection from "../CommentSection/CommentSection";
 import Users from "../PostContainer/Users";
+// import LikeSection from "../CommentSection/LikeSection"
 
 
 import { FaRegComment, FaRegHeart } from "react-icons/fa";
@@ -22,7 +23,7 @@ const PostContainer = props => {
       </div>
 
       <div className="bottom-container">
-        <div className="icon-container"
+        {/* <div className="icon-container"
         key="likes-icons-container"
         onClick={props.incrementLike}
         >
@@ -34,7 +35,8 @@ const PostContainer = props => {
             <FaRegComment />
           </IconContext.Provider>
         </div>
-        <p className="likes">{props.post.likes} likes</p>
+        <p className="likes">{props.post.likes} likes</p> */}
+        {<p className="likes">{props.post.likes} likes</p>}
         <CommentSection
           comments={props.post.comments}
           timestamp={props.post.timestamp}

@@ -6,7 +6,7 @@ import { IconContext } from "react-icons";
 const LikeSection = props => {
   return [
     <div
-      className="like-section"
+      className="icon-container"
       key="likes-icons-container"
       onClick={props.incrementLike}
     >
@@ -16,7 +16,7 @@ const LikeSection = props => {
             <FaRegHeart  />
             <FaRegComment />
           </IconContext.Provider>
-      <div className="like-section-wrapper">{props.likes}</div>
+          <p className="likes">{props.likes} likes</p>
     </div>
   ];
 };

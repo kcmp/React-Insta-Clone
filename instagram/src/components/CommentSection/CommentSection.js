@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 
 import Comment from "../CommentSection/Comments.js";
 import AddComment from "../CommentSection/AddComment";
+import LikeSection from "../CommentSection/LikeSection"
 import "./CommentSection.css";
 
 class CommentSection extends Component {
@@ -12,6 +13,7 @@ class CommentSection extends Component {
     this.state = {
       comments: this.props.comments,
       commentText: "",
+      username: "",
       likes: this.props.likes
     };
   }
@@ -62,7 +64,11 @@ class CommentSection extends Component {
 }
 
 CommentSection.propTypes = {
-  comments: PropTypes.array
+  comments: PropTypes.shape({
+    username: PropTypes.string,
+    thumbnailUrl: PropTypes.string,
+    imageUrl: PropTypes.string
+  })
 };
 
 export default CommentSection;
