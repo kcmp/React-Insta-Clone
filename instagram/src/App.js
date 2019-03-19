@@ -1,60 +1,35 @@
-import React, { Component } from "react";
-import dummyData from "./dummy-data.js";
-import SearchBar from "./components/SearchBar/SearchBar.js";
-import PostContainer from "./components/PostContainer/PostContainer";
+import React, { Component } from 'react';
 
-import "./App.css";
+import './App.css';
+
+import PostsPage from './components/PostContainer/PostsPage';
 
 class App extends Component {
-  constructor() {
+  constructor(){
     super();
-    this.state = {
-      dummyData: [],
-      likes:0,
-      show:true
-    };
+    this.state ={
+    }
   }
 
-  componentDidMount() {
-    setTimeout(() => {
-      this.setState({ dummyData: dummyData });
-    }, 1000);
+  // when the component mounts  
+  //I want to get the dummy data from the local storage
+  componentDidMount(){
   }
 
-  //update app's state with new comment
-  updateComments = (index, text) => {
-    this.setState((prevState, prevProps) => {
-      const posts = prevState.dummyData.slice();
-      posts[index].comments.push({ username: "", text: text });
-      return { dummyData: posts };
-    });
-  };
-
+  //only update local storage if the data has changed
+  componentDidUpdate(){ 
+  }
 
 
   render() {
     return (
       <div className="App">
-        <SearchBar />
-        <div>
-          {this.state.dummyData.length === 0 ? (
-            <h2>LOADING</h2>
-          ) : (
-            this.state.dummyData.map((post, i) => {
-              return (
-                <PostContainer
-                  key={i}
-                  post={post}
-                  index={i}
-                  updateComments={this.updateComments}
-                />
-              );
-            })
-          )}
-        </div>
+       <PostsPage />
       </div>
     );
   }
 }
 
+
 export default App;
+//do type check at the place you need to display
