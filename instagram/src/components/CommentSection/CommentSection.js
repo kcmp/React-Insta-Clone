@@ -27,8 +27,9 @@ class CommentSection extends Component {
   };
 
   incrementLike = () => {
-    let likes = this.state.likes + 1;
-    this.setState({ likes });
+    this.setState(prevState => {
+      return { likes: prevState.likes + 1 };
+    });
   };
 
   //handles state for AddComment in this component
@@ -41,7 +42,7 @@ class CommentSection extends Component {
     return (
       <div className="bottom-container">
         <LikeSection 
-                incrementLike={this.incrementLike}
+                incrementLike={this.state.incrementLike}
                 likes={this.state.likes}
             />  
         <div className="comment-section-container">

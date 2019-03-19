@@ -30,9 +30,7 @@ class App extends Component {
     });
   };
 
-  incrementLike = () => {
-    this.setState({ likes: this.state.clicks + 1 });
-  }
+
 
   render() {
     return (

@@ -13,9 +13,9 @@ const LikeSection = props => {
     <IconContext.Provider
             value={{ size: "1.5rem", className: "fa-icon" }}
           >
-            <FaRegHeart  />
+            <FaRegHeart onClick={props.incrementLike} />
             <FaRegComment />
-          </IconContext.Provider>
+    </IconContext.Provider>
           <p className="likes">{props.likes} likes</p>
     </div>
   );
