@@ -3,11 +3,13 @@ import "./PostContainer.css";
 
 import CommentSection from "../CommentSection/CommentSection";
 import Users from "../PostContainer/Users";
-// import LikeSection from "../CommentSection/LikeSection"
+import LikeSection from "../CommentSection/LikeSection"
 
 
 import { FaRegComment, FaRegHeart } from "react-icons/fa";
 import { IconContext } from "react-icons";
+
+
 
 const PostContainer = props => {
   console.log(props);
@@ -22,7 +24,11 @@ const PostContainer = props => {
         <img src={props.post.imageUrl} alt="" className="post-image" />
       </div>
 
-      <div className="bottom-container">
+      {/* <div className="bottom-container"> */}
+      {/* <LikeSection 
+              incrementLike={this.incrementLike}
+              likes={this.state.likes}
+          />   */}
         {/* <div className="icon-container"
         key="likes-icons-container"
         onClick={props.incrementLike}
@@ -44,7 +50,7 @@ const PostContainer = props => {
           updateComments={props.updateComments}
         />
       </div>
-    </div>
+    // </div>
   );
 };
 

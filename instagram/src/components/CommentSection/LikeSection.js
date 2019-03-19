@@ -4,7 +4,7 @@ import { FaRegComment, FaRegHeart } from "react-icons/fa";
 import { IconContext } from "react-icons";
 
 const LikeSection = props => {
-  return [
+  return (
     <div
       className="icon-container"
       key="likes-icons-container"
@@ -18,7 +18,7 @@ const LikeSection = props => {
           </IconContext.Provider>
           <p className="likes">{props.likes} likes</p>
     </div>
-  ];
+  );
 };
 
 export default LikeSection

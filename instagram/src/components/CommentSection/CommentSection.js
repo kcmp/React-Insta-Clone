@@ -39,25 +39,31 @@ class CommentSection extends Component {
   render() {
     console.log(this.state.comments);
     return (
-      <div className="comment-section-container">
-        <div className="comments">
-          {this.state.comments.map((comment, i) => {
-            return (
-              <Comment
-                key={i}
-                username={comment.username}
-                text={comment.text}
-              />
-            );
-          })}
+      <div className="bottom-container">
+        <LikeSection 
+                incrementLike={this.incrementLike}
+                likes={this.state.likes}
+            />  
+        <div className="comment-section-container">
+          <div className="comments">
+            {this.state.comments.map((comment, i) => {
+              return (
+                <Comment
+                  key={i}
+                  username={comment.username}
+                  text={comment.text}
+                />
+              );
+            })}
+          </div>
+          <p className="time-stamp">{this.props.timestamp}</p>
+          <hr className="comment-divider" />
+          <AddComment
+            addNewCommment={this.addNewCommment}
+            changeHandler={this.changeHandler}
+            commentText={this.state.commentText}
+          />
         </div>
-        <p className="time-stamp">{this.props.timestamp}</p>
-        <hr className="comment-divider" />
-        <AddComment
-          addNewCommment={this.addNewCommment}
-          changeHandler={this.changeHandler}
-          commentText={this.state.commentText}
-        />
       </div>
     );
   }
