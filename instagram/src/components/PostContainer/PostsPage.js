@@ -62,13 +62,13 @@ class PostsPage extends Component {
 
   render() {
     console.log(this.props)
-    const re = new RegExp(this.state.userSearch,'i');
+    const regExpression = new RegExp(this.state.userSearch,'i');
     return (
       <div className="App">
         <SearchBar changeHandler={this.changeHandler} userSearch={this.state.userSearch} />
         <div className="posts-wrapper">
-          {this.state.dummyData.length === 0? <p>LOADING</p>:
-            this.state.dummyData.filter(e=>{return e.username.match(e)}).map((post,i)=>{
+          {this.state.dummyData.length === 0 ? <p>LOADING</p>:
+            this.state.dummyData.filter(e=>{return e.username.match(regExpression)}).map((post,i)=>{
               return <PostContainer 
                 key={i}  
                 post={post} 
