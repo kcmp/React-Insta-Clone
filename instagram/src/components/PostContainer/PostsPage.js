@@ -68,7 +68,7 @@ class PostsPage extends Component {
         <SearchBar changeHandler={this.changeHandler} userSearch={this.state.userSearch} />
         <div className="posts-wrapper">
           {this.state.dummyData.length === 0? <p>LOADING</p>:
-            this.state.dummyData.filter(e=>{return e.username.match(re)}).map((post,i)=>{
+            this.state.dummyData.filter(e=>{return e.username.match(e)}).map((post,i)=>{
               return <PostContainer 
                 key={i}  
                 post={post} 
