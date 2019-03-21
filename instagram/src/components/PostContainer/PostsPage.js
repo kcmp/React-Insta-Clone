@@ -84,5 +84,4 @@ class PostsPage extends Component {
   }
 }
 
-//I could also export the Authenticated component here.
 export default PostsPage
